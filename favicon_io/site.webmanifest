@@ -1,6 +1,7 @@
 {
   "name": "Add to cart",
   "short_name": "Add to cart",
+  "start_url": "/index.html",
   "icons": [
     {
       "src": "/favicon_io/android-chrome-192x192.png",
