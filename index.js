@@ -39,6 +39,8 @@ addButtonEl.addEventListener("click", function () {
     console.log(`${inputValue} added to database`);
 
     clearInputFieldEl();
+  } else {
+    alert('No se puede enviar vacio.')
   }
 });
 
