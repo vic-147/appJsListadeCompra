@@ -18,6 +18,16 @@ const listaDeComprasDB = ref(database, "listaDeCompras");
 const inputFieldEl = document.querySelector("#input-field");
 const addButtonEl = document.querySelector("#btn-add");
 const shoppingListEl = document.querySelector("#shopping-list");
+const popupBtn = document.querySelector(".popup-btn");
+const popup = document.querySelector(".popup");
+
+popupBtn.addEventListener("click", function () {
+  if (popup.style.display === "none") {
+    popup.style.display = "block";
+  } else {
+    popup.style.display = "none";
+  }
+});
 
 addButtonEl.addEventListener("click", function () {
   let inputValue = inputFieldEl.value;
@@ -65,7 +75,7 @@ function appendItemToShoppingListEl(item) {
   newLiEl.textContent = itemValue;
   shoppingListEl.append(newLiEl);
 
-  newLiEl.addEventListener("click", function () {
+  newLiEl.addEventListener("dblclick", function () {
     console.log(`${itemID} deleted`);
 
     let exactLocationOfItemInDB = ref(database, `listaDeCompras/${itemID}`);
