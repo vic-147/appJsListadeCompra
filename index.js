@@ -31,11 +31,15 @@ popupBtn.addEventListener("click", function () {
 
 addButtonEl.addEventListener("click", function () {
   let inputValue = inputFieldEl.value;
-  push(listaDeComprasDB, inputValue);
 
-  console.log(`${inputValue} added to database`);
+  // agregar condición para verificar si el inputValue está vacío
+  if (inputValue.trim() !== "") {
+    push(listaDeComprasDB, inputValue);
 
-  clearInputFieldEl();
+    console.log(`${inputValue} added to database`);
+
+    clearInputFieldEl();
+  }
 });
 
 //traer datos del DB
